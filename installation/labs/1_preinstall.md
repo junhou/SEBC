@@ -174,15 +174,21 @@ operation.sh
     done
 
 ##Additional Service##
-###NSCD
+
+###NSCD###
+
     service nscd start
     service nscd status
 
-###NTPD
+###NTPD###
+
     service ntpd start
     ntpdate pool.ntp.org
     service ntpd status
     chkconfig ntpd on
+
+
+
 
 
 
