@@ -155,7 +155,7 @@ Enter an object type in the search bar
 * Administration -> Alerts
 * Delivers to email or as SNMP traps
 * May be associated with
-    * Activity Monitor
+    * Activity Monitor --<Note: MR1 activity>
     * Configuration changes (enable/disable only)
     * HBase (errors, poor region health)
     * Health metric thresholds (<font color="red">Bad</font> or <font color="orange">Concerning</font> result)

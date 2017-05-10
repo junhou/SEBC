@@ -187,9 +187,21 @@ operation.sh
     service ntpd status
     chkconfig ntpd on
 
+###JDBC###
+JDBC.sh:
 
-
-
+    wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
+    tar -xzvf mysql-connector-java-5.1.40.tar.gz
+    mkdir /usr/share/java
+    sudo mv mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
+    echo "PATH=/usr/share/java/:$PATH" >> ~/.bashrc
+    source ~/.bashrc
+    for host_no in {"vm2","vm3","vm4","vm5"}
+    do
+       echo "#Operation on ${host_no} ..."
+       sudo scp -p /usr/share/java/mysql-connector-java.jar root@${host_no}:/usr/share/java/
+       ssh -t -i "/home/centos/SEBC_KEY.pem" centos@${host_no} "echo "PATH=/usr/share/java/:$PATH" >> ~/.bashrc; source ~/.bashrc"
+    done
 
 
 

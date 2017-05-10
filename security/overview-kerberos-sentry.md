@@ -88,7 +88,7 @@
     * File permissions for user-group-world may be too simple
     * You must support a list of groups, not just one
 * [Apache Sentry (incubating)](https://sentry.incubator.apache.org/)
-    * Protects data objects (`server, database, table, URI`) that are projected onto file content
+    * Protects data objects (`server, database, table, VIEW(Which enable column level ACL), URI`) that are projected onto file content
     * Maps Linux/LDAP groups to roles that are configured with access privileges
 
 ---
